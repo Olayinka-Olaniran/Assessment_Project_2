@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <title>GRADING PROJECT</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="WeeklyAssessment2.css">
+
+    </head>
+
+    <body>
+        <h1>GRADING SYSTEM</h1>
+         <form onsubmit="getGrade()">
+
+            <div id = "Score">
+                <label for="score">Score:</label>
+                <input type="text" id="score" required><br><br>           
+            </div>
+
+
+            <div id="grading">
+            <button id="generatesRemark" type="submit">Grade</button>
+            </div>
+
+            <dialog id = "modal">
+
+            <div id="close">
+            <button id="closeWindow" type="button">X</button>
+            </div>
+
+            <p id="remark"></p>
+        </dialog>
+
+        </form>
+
+        <script src="WeeklyAssessment2.js"></script>
+
+    </body>
+</html>
