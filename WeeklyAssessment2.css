@@ -1,158 +1,183 @@
+/* ==========================================================================
+   1. CORE GLOBAL STYLES & RESET
+   ========================================================================== */
+* {
+    box-sizing: border-box; /* Ensures padding doesn't alter element sizing calculations */
+    margin: 0;              /* Wipes browser default margin spacing */
+    padding: 0;             /* Wipes browser default padding spacing */
+}
 
-/* Page background styling */
 body {
-    font-family: Arial, sans-serif;   /* sets default font for entire page */
-    background: #f4f6f9;              /* sets light grey page background */
-    margin: 0;                        /* removes default browser margin */
-    padding: 20px;                   /* adds spacing around page content */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #0d1b2a; /* Deep Academic Navy Blue background */
+    color: #e0e1dd;            /* Soft off-white for crisp, highly readable text */
+    display: flex;             /* Enables flexible centering layout grid */
+    flex-direction: column;    /* Arranges headers and form layouts vertically */
+    justify-content: center;   /* Centers contents vertically on viewport axis */
+    align-items: center;       /* Centers contents horizontally on viewport axis */
+    min-height: 100vh;         /* Spans the full height of the viewing device screen */
+    padding: 1.5rem;           /* Prevents layouts from touching edge zones on mobile devices */
 }
 
-/* Main title styling */
+/* ==========================================================================
+   2. TYPOGRAPHY & HEADERS
+   ========================================================================== */
 h1 {
-    text-align: center;              /* centers the heading text */
-    color: #333;                     /* sets dark grey text color */
-    margin-bottom: 30px;             /* adds space below title */
-    letter-spacing: 2px;             /* spreads out letters slightly */
+    color: #f4d35e;           /* High-contrast crisp Amber/Yellow primary color */
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;    /* Spreads text out slightly for an app-dashboard look */
+    text-transform: uppercase;/* Capitalizes title rules globally */
+    margin-bottom: 2rem;      /* Adds safe separation space above the card */
+    text-align: center;
 }
 
-/* Form container styling */
+/* ==========================================================================
+   3. CONTAINER CARD & CONTROLS
+   ========================================================================== */
 form {
-    width: 30%;                      /* sets form width to half screen */
-    min-width: 200px;                /* prevents form from getting too small */
-    margin: auto;                    /* centers form horizontally */
-    background: #ffffff;            /* white background for form */
-    padding: 5px 0px;             /* internal spacing inside form */
-    border-radius: 10px;            /* rounds form corners */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* adds soft shadow */
-}
-
-/* Each form section block */
-form div {
-    margin-bottom: 20px;            /* space below each section */
-    margin-left: 30px;              /* pushes content slightly right */
-    padding: 0px;                  /* internal spacing */
-    border-bottom: 1px solid #eee;  /* light divider line */
-}
-
-/* Section heading styling */
-form h3 {
-    margin-bottom: 10px;            /* space below heading */
-    color: #444;                    /* medium dark text color */
-}
-
-/* Center generate button container */
-#grading {
-    display: flex;                  /* enables flex layout */
-    justify-content: center;       /* centers button horizontally */
-}
-
-/* Label styling */
-label {
-    display: inline-block;          /* allows width control */
-    width: 140px;                   /* fixed label width for alignment */
-    font-weight: bold;              /* makes labels bold */
-    color: #555;                    /* soft dark grey text */
-}
-
-/* Text input styling */
-input[type="text"] {
-    width: calc(100% - 150px);     /* adjusts width next to label */
-    padding: 8px;                  /* space inside input box */
-    border: 1px solid #ccc;        /* light grey border */
-    border-radius: 5px;            /* rounded corners */
-    outline: none;                 /* removes default outline */
-    transition: 0.3s;              /* smooth hover/focus animation */
-}
-
-/* Input focus effect */
-input[type="text"]:focus {
-    border-color: #4a90e2;         /* blue border on focus */
-    box-shadow: 0 0 5px rgba(74,144,226,0.4); /* glow effect */
-}
-
-/* Button styling */
-#generatesRemark {
-    width: calc(40%);              /* button takes half width */
-    padding: 5px;                  /* internal spacing */
-    border: 1px solid #ccc;       /* light border */
-    border-radius: 5px;           /* rounded corners */
-    outline: none;                /* removes default outline */
-    transition: 0.3s;             /* smooth hover effect */
-}
-
-/* Button hover effect */
-#generatesRemark:hover {
-    border-color: #4a90e2;        /* blue border on hover */
-    box-shadow: 0 0 5px rgba(74,144,226,0.4); /* glow on hover */
-}
-
-/* Output paragraph styling */
-#bioGenerator {
-    display: block;
-    width: 50%;                      /* sets form width to half screen */
-    min-width: 320px;                /* prevents form from getting too small */
-    margin: 30px auto;                    /* centers form horizontally */
-    background: #ffffff;            /* white background for form */
-    padding: 25px 40px;             /* internal spacing inside form */
-    border-radius: 10px;            /* rounds form corners */
-    box-shadow: 0 4px 15px rgba(208, 23, 23, 0.1); /* adds soft shadow */
-}
-p {
-    color: #4a90e2;
-    font-size: 18px;              /* increases text size */
-    font-family: Arial, sans-serif; /* sets clean readable font */
-    line-height: 1.6;             /* improves readability spacing */
-    font-weight: 500;             /* makes text slightly bold */
-    color: #222;                  /* dark text color */
-    padding: 15px;               /* space inside output box */
-    background: #f5f5f5;         /* light grey background */
-    border-radius: 8px;          /* rounded corners */
-}
-#bioGen {
+    background-color: #1b263b; /* Slightly lighter navy card fill container */
+    border: 1px solid #415a77; /* Subtle frame borders */
+    border-radius: 12px;       /* Smoothly rounds the card corner points */
+    width: 100%;
+    max-width: 450px;          /* Restricts expansion boundary context */
+    padding: 2.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); /* Elevates the card view layer */
     display: flex;
-    width: calc(20%);              
+    flex-direction: column;
+    gap: 1.5rem;               /* Standard spacing between consecutive components */
+}
+
+/* Form Item Flex Section Wrappers */
+form div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 0;          /* Reset old layout margin overrides */
+    padding-bottom: 0.5rem; 
+}
+
+/* Label Layout Configuration */
+label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #e0e1dd;
+    min-width: 60px;           /* Standard fixed baseline block width */
+}
+
+/* Interactive Text Input Fields */
+input[type="text"] {
+    flex: 1;                   /* Stretches field input context to fill remaining width safely */
+    padding: 0.75rem 1rem;
+    background-color: #0d1b2a; /* Inner text area contrast background fill */
+    border: 1px solid #415a77;
+    border-radius: 6px;
+    color: #ffffff;            /* Pure white typing text values */
+    font-size: 1rem;
+    outline: none;             /* Disables native system browser ring overlays */
+    transition: border-color 0.2s, box-shadow 0.2s; /* Animates interactions smoothly */
+}
+
+/* Focused input status lighting effect */
+input[type="text"]:focus {
+    border-color: #f4d35e;     /* Glow yellow border ring overlay */
+    box-shadow: 0 0 8px rgba(244, 211, 94, 0.25);
+}
+
+/* Grading Actions Placement Block */
+#grading {
+    display: flex;
     justify-content: center;
-    margin: 20px auto;
-    padding: 8px;                  /* internal spacing */
-    border: 1px solid #ccc;       /* light border */
-    border-radius: 5px;           /* rounded corners */
-    outline: none;                /* removes default outline */
-    transition: 0.3s;             /* smooth hover effect */
+    border: none;              /* Clears out base component background dividing lines */
+    padding: 0;
 }
 
-/* Button hover effect */
-#bioGen:hover {
-    border-color: #bd0707;        /* red border on hover */
-    box-shadow: 0 0 5px rgba(74,144,226,0.4); /* glow on hover */
-}
-/* Responsive design for mobile screens */
-@media (max-width: 768px) {
-    form {
-        width: 90%;              /* form becomes wider on small screens */
-    }
-
-    label {
-        display: block;         /* label moves above input */
-        width: 100%;            /* full width label */
-        margin-bottom: 5px;     /* spacing below label */
-    }
-
-    input[type="text"] {
-        width: 100%;            /* inputs take full width */
-    }
+/* Primary Execution Grading Trigger Button */
+#generatesRemark {
+    width: 100%;
+    padding: 0.85rem;
+    background-color: #f4d35e; /* Accent Yellow palette tone matching headers */
+    color: #0d1b2a;            /* Inverse dark text choice for clear visibility */
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background-color 0.2s, transform 0.1s;
 }
 
-#close{
-    text-align: right;
+#generatesRemark:hover {
+    background-color: #e2c044; /* Darkens gold shade elements during hover state trace */
 }
-#close button{
-    text-align: right;
-    color: white;
-    background-color: red;
 
+#generatesRemark:active {
+    transform: scale(0.98);    /* Creates a responsive click-compression bounce feel */
 }
-#close :hover{
 
-    background-color: rgb(74, 1, 1);
-    
+/* ==========================================================================
+   4. FIXED DIALOG MODAL DESIGN (THE OVERLAY BUG FIXES)
+   ========================================================================== */
+
+/* The Floating Content Dialog Modal Container Box */
+dialog#modal {
+    position: relative;        /* Crucial: locks down absolute coordinate mapping metrics */
+    background-color: #1b263b; /* Matches your core container base background color */
+    border: 2px solid #f4d35e; /* Yellow frame boundary accent strip */
+    border-radius: 10px;
+    padding: 2.5rem 2rem 2rem 2rem; /* Creates upper clearing safe padding for the absolute X btn */
+    margin: auto;              /* Centers system dialogue panels across both canvas quadrants */
+    color: #e0e1dd;
+    max-width: 460px;
+    width: 90%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Dim Backdrop Layer Behind Main Overlay */
+dialog#modal::backdrop {
+    background-color: rgba(13, 27, 42, 0.85); /* Darkens background screens to optimize focal focus */
+}
+
+/* Force Close Button Placement Box (Overrides form inheritance issues) */
+#close {
+    position: absolute !important; /* Disconnects node from normal rendering grid flow pipelines */
+    top: 6px !important;           /* Forces precise top margin padding offset of 6px */
+    right: 6px !important;         /* Forces precise right margin padding offset of 6px */
+    left: auto !important;         /* Destroys browser default left grid pull mechanics */
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;       /* Destroys the layout grid structural line borders */
+    width: auto !important;
+}
+
+/* Close Exit Action Trigger Button "X" Symbol Component */
+#closeWindow {
+    background: transparent;   /* Invisible element core backings */
+    border: none;
+    color: #a2a8d3;            /* Light layout placeholder state blue */
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 4px 8px;          /* Increases touch/click collision bounds areas safely */
+    border-radius: 4px;
+    line-height: 1;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+/* Hover trace actions on target window box exits */
+#closeWindow:hover {
+    color: #ffffff;
+    background-color: #ef4444; /* Clean alert indicator bright red exit block highlights */
+}
+
+/* Output Report Statement Paragraph Box */
+#remark {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e0e1dd;
+    text-align: center;
+    white-space: normal;       /* FIX: Clears indented space distortions from multi-line text strings */
+    word-break: break-word;    /* Prevents horizontal overflow rendering errors */
 }
